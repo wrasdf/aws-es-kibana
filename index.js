@@ -153,7 +153,7 @@ proxy.on('proxyRes', function (proxyReq, req, res) {
     }
 });
 
-http.createServer(app).listen(PORT, BIND_ADDRESS);
+http.createServer(app).listen(443, BIND_ADDRESS);
 
 if(!argv.s) {
     console.log(figlet.textSync('AWS ES Proxy!', {
@@ -163,5 +163,5 @@ if(!argv.s) {
     }));
 }
 
-console.log('AWS ES cluster available at http://' + BIND_ADDRESS + ':' + PORT);
-console.log('Kibana available at http://' + BIND_ADDRESS + ':' + PORT + '/_plugin/kibana/');
+console.log('AWS ES cluster available at http://' + BIND_ADDRESS + ':' + 443);
+console.log('Kibana available at http://' + BIND_ADDRESS + ':' + 443 + '/_plugin/kibana/');
