@@ -89,7 +89,7 @@ if (!TARGET.match(/^https?:\/\//)) {
 }
 
 var BIND_ADDRESS = argv.b;
-var PORT = argv.p;
+var PORT = process.env.PORT || argv.p;
 var REQ_LIMIT = argv.l;
 
 var credentials;
