@@ -1,15 +1,10 @@
-FROM node:6
+FROM node:12-alpine
 
 WORKDIR /app
+COPY package.json *yarn* /app/
+RUN yarn install
 
-RUN useradd -ms /bin/bash aws-es-kibana
-RUN chown aws-es-kibana:aws-es-kibana /app
-
-ADD index.js /app
-ADD package.json /app
-
-RUN npm install
-
+COPY . /app
 EXPOSE 9200
 
-ENTRYPOINT ["node", "index.js"]
+ENTRYPOINT ["yarn", "start"]

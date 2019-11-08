@@ -1,44 +1,40 @@
 {
   "name": "aws-es-kibana",
-  "version": "1.0.5",
+  "version": "0.1.0",
   "description": "AWS ElasticSearch/Kibana Proxy",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "engines": {
-    "node": ">=6.3.0"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/santthosh/aws-es-kibana.git"
+    "url": "git+https://github.com/wrasdf/aws-es-kibana.git"
   },
   "keywords": [
     "AWS",
+    "EKS",
     "ES",
     "ElasticSearch",
     "Kibana",
-    "AWS ES Proxy",
-    "AWS ES Kibana"
+    "AWS ES Proxy"
   ],
-  "author": "santthosh",
+  "author": "wrasdf@gmail.com",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/santthosh/aws-es-kibana/issues"
+    "url": "https://github.com/wrasdf/aws-es-kibana/issues"
   },
-  "homepage": "https://github.com/santthosh/aws-es-kibana#readme",
-  "preferGlobal": true,
   "bin": {
     "aws-es-kibana": "index.js"
   },
+  "homepage": "https://github.com/wrasdf/aws-es-kibana#readme",
   "dependencies": {
-    "aws-sdk": "^2.5.1",
+    "aws-sdk": "^2.567.0",
     "basic-auth-connect": "^1.0.0",
-    "body-parser": "^1.15.2",
-    "compression": "^1.6.2",
-    "express": "^4.14.0",
-    "figlet": "^1.1.2",
-    "http-proxy": "^1.14.0",
-    "yargs": "^4.8.1"
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "http-proxy": "^1.18.0",
+    "yargs": "^14.2.0"
   }
 }
