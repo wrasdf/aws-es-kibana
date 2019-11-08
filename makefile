@@ -1,4 +1,4 @@
-.PHONY: sh run
+.PHONY: sh
 
 DCB := docker-compose build
 DCR := docker-compose run --rm
@@ -7,6 +7,8 @@ sh:
 	$(DCB) sh
 	$(DCR) sh
 
-run:
-	docker build -t aws-es-kibana:local .
-	docker run -d -v ${HOME}/.aws:/root/.aws -p 9200:9200 aws-es-kibana:local https://elasticsearch.apollo-stg.platform.myobdev.com
+build-%:
+	docker build -t ikerry/aws-es-kibana:$(*) .
+	docker tag ikerry/aws-es-kibana:$(*) ikerry/aws-es-kibana:latest
+	docker push ikerry/aws-es-kibana:latest
+	docker push ikerry/aws-es-kibana:$(*)
